@@ -1,8 +1,10 @@
 package com.example.uiexamples
 
+import android.content.Intent
 import android.graphics.Canvas
 import android.graphics.Color
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -18,6 +20,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.uiexamples.ui.home.HomeFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
@@ -27,6 +30,9 @@ import kotlin.collections.ArrayList
 
 class CrudPersonas : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var homeFragment: HomeFragment
+
+
     var personas: Personas = Personas.instance
 
     lateinit var lista:RecyclerView
@@ -36,6 +42,7 @@ class CrudPersonas : AppCompatActivity() {
     var position: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crud_personas)
 
@@ -53,6 +60,22 @@ class CrudPersonas : AppCompatActivity() {
         lista = findViewById(R.id.lista)
         lista.layoutManager = LinearLayoutManager(lista.context)
         lista.setHasFixedSize(true)
+
+
+        val bTBack_home = findViewById<Button>(R.id.back_home)
+
+        bTBack_home.setOnClickListener(){
+            // make a toast on button click event
+            //Toast.makeText(this, "Volver al menu", Toast.LENGTH_LONG).show()
+
+            val i = Intent(this, MenuExample::class.java)
+            startActivity(i)
+
+        }
+
+
+
+
 
         findViewById<SearchView>(R.id.person_search).setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -84,6 +107,7 @@ class CrudPersonas : AppCompatActivity() {
                         position = viewHolder.adapterPosition
 
                         if(direction == ItemTouchHelper.LEFT){
+
                             persona = Persona(personas.getPersonas()[position].user, personas.getPersonas()[position].password, personas.getPersonas()[position].nombre, personas.getPersonas()[position].foto)
                             personas.deletePerson(position)
                             lista.adapter?.notifyItemRemoved(position)
@@ -95,11 +119,14 @@ class CrudPersonas : AppCompatActivity() {
                             adaptador = RecyclerView_Adapter(personas.getPersonas())
                             lista.adapter = adaptador
                         }else{
+                            //Editar
                             persona = Persona(personas.getPersonas()[position].user, personas.getPersonas()[position].password, personas.getPersonas()[position].nombre, personas.getPersonas()[position].foto)
                             archived.add(persona)
+                            val i = Intent(this@CrudPersonas, Editar_Persona::class.java)
+                            startActivity(i)
 
-                            personas.deletePerson(position)
-                            lista.adapter?.notifyItemRemoved(position)
+                            //personas.deletePerson(position)
+                            //lista.adapter?.notifyItemRemoved(position)
 
                             Snackbar.make(lista, persona.nombre + "Se editaría...", Snackbar.LENGTH_LONG).setAction("Undo") {
                                 archived.removeAt(archived.lastIndexOf(persona))
@@ -133,15 +160,26 @@ class CrudPersonas : AppCompatActivity() {
 
 
 
+
+        //Agregar Persona
         val add: FloatingActionButton = findViewById(R.id.add)
+
         add.setOnClickListener { view ->
-            Toast.makeText(this, "Dentro del botón flotante", Toast.LENGTH_SHORT).show()
-            Snackbar.make(view, "Botón para insertar", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            //Toast.makeText(this, "Dentro del botón flotante", Toast.LENGTH_SHORT).show()
+            //Snackbar.make(view, "Botón para insertar", Snackbar.LENGTH_LONG)
+                //.setAction("Action", null).show()
+
+            val i = Intent(this@CrudPersonas, AgregarPersona::class.java)
+            startActivity(i)
+
+            //setContentView(R.layout.activity_agregar_persona)
+
         }
 
 
     }
+
+
 
     private fun getListOfPersons() {
         val Npersonas = ArrayList<Persona>()
