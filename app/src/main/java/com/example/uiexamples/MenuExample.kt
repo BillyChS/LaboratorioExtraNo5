@@ -106,7 +106,7 @@ class MenuExample : AppCompatActivity(), NavigationView.OnNavigationItemSelected
                     .commit()
             }
             R.id.nav_personas -> {
-                val i = Intent(this, CrudPersonas::class.java)
+                val i = Intent(this@MenuExample, CrudPersonas::class.java)
                 startActivity(i)
             }
         }

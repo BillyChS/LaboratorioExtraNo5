@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UIExamples">
-        <activity android:name=".CrudPersonas"></activity>
+        <activity
+            android:name=".AgregarPersona"
+            android:exported="false" />
+        <activity
+            android:name=".Editar_Persona"
+            android:exported="false" />
+        <activity
+            android:name=".Agregar_Persona"
+            android:exported="false" />
+        <activity android:name=".CrudPersonas" />
         <activity
             android:name=".MenuExample"
             android:label="@string/title_activity_menu_example"
