@@ -109,6 +109,10 @@ class MenuExample : AppCompatActivity(), NavigationView.OnNavigationItemSelected
                 val i = Intent(this@MenuExample, CrudPersonas::class.java)
                 startActivity(i)
             }
+            R.id.nav_logout->{
+                val i = Intent(this@MenuExample, LoginExample::class.java)
+                startActivity(i)
+            }
         }
         return true
     }

@@ -101,16 +101,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView7" />
 
-    <ImageButton
-        android:id="@+id/editarButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editarPassword"
-        app:srcCompat="@drawable/ic_baseline_edit_24" />
-
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
@@ -120,6 +110,14 @@
         android:text="Nombre"
         app:layout_constraintBottom_toBottomOf="@+id/editarNombre"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/editarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_popup_sync"
+        tools:layout_editor_absoluteX="184dp"
+        tools:layout_editor_absoluteY="585dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

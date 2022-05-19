@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Gonzalo/Desktop/Lab extra 5/LaboratorioExtraNo5/app/src/main/res/layout/activity_agregar_persona.xml" value="0.264" />
+        <entry key="..\:/Users/Gonzalo/Desktop/Lab extra 5/LaboratorioExtraNo5/app/src/main/res/layout/activity_crud_personas.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Gonzalo/Desktop/Lab extra 5/LaboratorioExtraNo5/app/src/main/res/layout/activity_editar_persona.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Gonzalo/Desktop/Lab extra 5/LaboratorioExtraNo5/app/src/main/res/layout/activity_menu_example.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Gonzalo/Desktop/Lab extra 5/LaboratorioExtraNo5/app/src/main/res/layout/fragment_gallery.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Gonzalo/Desktop/Lab extra 5/LaboratorioExtraNo5/app/src/main/res/layout/fragment_slideshow.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Gonzalo/Desktop/Lab extra 5/LaboratorioExtraNo5/app/src/main/res/layout/nav_header_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Gonzalo/Desktop/Lab extra 5/LaboratorioExtraNo5/app/src/main/res/layout/templatepersonas.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Gonzalo/Desktop/Lab extra 5/LaboratorioExtraNo5/app/src/main/res/menu/activity_main_drawer.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Gonzalo/Desktop/Lab extra 5/LaboratorioExtraNo5/app/src/main/res/menu/menu_example.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/bicha/Documents/Billy/Cursos/2022/I_semestre_2022/Moviles/5LabExtra/UIExamples/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.1785" />
         <entry key="..\:/Users/bicha/Documents/Billy/Cursos/2022/I_semestre_2022/Moviles/5LabExtra/UIExamples/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.1785" />
         <entry key="..\:/Users/bicha/Documents/Billy/Cursos/2022/I_semestre_2022/Moviles/5LabExtra/UIExamples/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1785" />
