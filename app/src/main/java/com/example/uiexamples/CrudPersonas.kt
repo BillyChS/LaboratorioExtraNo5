@@ -7,22 +7,15 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
-import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.uiexamples.ui.home.HomeFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator
 import java.util.*
@@ -62,13 +55,13 @@ class CrudPersonas : AppCompatActivity() {
         lista.setHasFixedSize(true)
 
 
-        val bTBack_home = findViewById<Button>(R.id.back_home)
+        val bTBack_home = findViewById(R.id.back) as Button
 
         bTBack_home.setOnClickListener(){
             // make a toast on button click event
-            //Toast.makeText(this, "Volver al menu", Toast.LENGTH_LONG).show()
+          //  Toast.makeText(this, "Volver al menu", Toast.LENGTH_LONG).show()
 
-            val i = Intent(this, MenuExample::class.java)
+            val i = Intent(this@CrudPersonas, MenuExample::class.java)
             startActivity(i)
 
         }
@@ -123,6 +116,7 @@ class CrudPersonas : AppCompatActivity() {
                             persona = Persona(personas.getPersonas()[position].user, personas.getPersonas()[position].password, personas.getPersonas()[position].nombre, personas.getPersonas()[position].foto)
                             archived.add(persona)
                             val i = Intent(this@CrudPersonas, Editar_Persona::class.java)
+                            i.putExtra("position",position)
                             startActivity(i)
 
                             //personas.deletePerson(position)

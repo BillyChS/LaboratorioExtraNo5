@@ -17,7 +17,7 @@ class Editar_Persona : AppCompatActivity() {
 
 
         val bTVolver = findViewById(R.id.volver_crud) as Button
-
+        val editar = findViewById(R.id.editarButton)as ImageButton
         bTVolver.setOnClickListener(){
             // make a toast on button click event
             //Toast.makeText(this, "Volver al menu", Toast.LENGTH_LONG).show()
@@ -27,9 +27,10 @@ class Editar_Persona : AppCompatActivity() {
 
         }
 
-        val editar = findViewById<ImageButton>(R.id.editarButton)
+
 
         editar.setOnClickListener(){
+
             editar()
         }
 
@@ -44,18 +45,31 @@ class Editar_Persona : AppCompatActivity() {
     }
 
     private fun editar(){
-        Toast.makeText(this, "Editar", Toast.LENGTH_LONG).show()
+        //Toast.makeText(this, "Editar", Toast.LENGTH_LONG).show()
 
-        var  nombre = findViewById<EditText>(R.id.agregarUsuario)
-        var usuario = findViewById<EditText>(R.id.agregarNombre)
-        var password = findViewById<EditText>(R.id.agregarPassword)
+        var  nombre = findViewById<EditText>(R.id.editarNombre)
+        var usuario = findViewById<EditText>(R.id.editarUsuario)
+        var password = findViewById<EditText>(R.id.editarPassword)
+        val bundle = intent.extras
+        val pos = bundle!!.getInt("position")
 
+      //  position = viewHolder.adapterPosition
+        var et_nombre = nombre.text
+        var et_usuario = usuario.text
+        var et_password = password.text
+         //Toast.makeText(this, "Prueba de boton", Toast.LENGTH_SHORT).show()
 
-
-
-        val et_nombre = nombre.text;
-        val et_usuario = usuario.text;
-        val et_password = password.text;
+        if(et_nombre.isEmpty() || et_usuario.isEmpty() || et_password.isEmpty()){
+            Toast.makeText(this@Editar_Persona, "Hay algun campo vacio", Toast.LENGTH_LONG).show()
+        }else{
+            var cambio=Persona(et_usuario.toString(),et_password.toString(),et_nombre.toString(),personas.getPersonas()[pos].foto)
+            personas.editPerson(cambio,pos)
+            this@Editar_Persona.finish()
+            val i = Intent(this@Editar_Persona, CrudPersonas::class.java)
+            startActivity(i)
+            }
+       // val i = Intent(this@Editar_Persona, CrudPersonas::class.java)
+       // startActivity(i)
 
     }
 
