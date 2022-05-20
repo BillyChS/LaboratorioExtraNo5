@@ -21,6 +21,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar2"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme" />
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -32,6 +40,7 @@
                     android:layout_marginStart="1dp"
                     android:layout_marginBottom="16dp"
                     android:ems="10"
+                    android:hint="Contraseña"
                     android:inputType="textPassword"
                     app:layout_constraintBottom_toTopOf="@+id/editarButton"
                     app:layout_constraintStart_toStartOf="@+id/editarUsuario" />
@@ -50,12 +59,12 @@
                     android:id="@+id/editarNombre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="36dp"
                     android:layout_marginBottom="253dp"
                     android:ems="10"
+                    android:hint="Nombre"
                     android:inputType="textPersonName"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView9" />
+                    tools:layout_editor_absoluteX="100dp" />
 
                 <ImageButton
                     android:id="@+id/editarButton"
@@ -70,42 +79,11 @@
                     android:id="@+id/volver_crud"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="56dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="48dp"
                     android:text="Volver"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="93dp"
-                    android:layout_marginBottom="93dp"
-                    android:text="Contra"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/editarUsuario" />
-
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Usuario"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/editarUsuario" />
-
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="13dp"
-                    android:text="Nombre"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/editarNombre"
-                    app:layout_constraintStart_toStartOf="parent" />
 
                 <Button
                     android:id="@+id/cambiarFotoButton"
@@ -121,12 +99,12 @@
                     android:id="@+id/editarUsuario"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="36dp"
                     android:layout_marginTop="48dp"
                     android:ems="10"
+                    android:hint="Usuario"
                     android:inputType="textPersonName"
-                    app:layout_constraintStart_toEndOf="@+id/textView6"
-                    app:layout_constraintTop_toBottomOf="@+id/editarNombre" />
+                    app:layout_constraintTop_toBottomOf="@+id/editarNombre"
+                    tools:layout_editor_absoluteX="100dp" />
 
                 <ImageView
                     android:id="@+id/imageView2"
